@@ -1,6 +1,8 @@
 import Modal from "react-modal";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
+import { useDispatch } from "react-redux";
+import { addFavouritePro } from "../../store/slices/productSlice";
 
 type Props = {
   id: number;
@@ -13,9 +15,14 @@ const customStyles = {
 };
 
 export const ProductModal: React.FC<Props> = (props) => {
+  const dispatch = useDispatch();
   const { id, isOpen, closeModal } = props;
   const products = useSelector((store: RootState) => store.products);
 
+  const addProduct = async () => {
+    await dispatch(addFavouritePro(products[id]));
+    closeModal();
+  };
   return (
     <Modal
       isOpen={isOpen}
@@ -57,7 +64,13 @@ export const ProductModal: React.FC<Props> = (props) => {
 
         <div className="mt-2 flex justify-end">
           <button
-            className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+            className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 w-20"
+            onClick={addProduct}
+          >
+            Add
+          </button>
+          <button
+            className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 w-20"
             onClick={closeModal}
           >
             Close

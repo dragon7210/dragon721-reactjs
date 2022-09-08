@@ -1,11 +1,12 @@
-import React from "react";
-import Home from "./home/home";
+import React, { Suspense } from "react";
+import SuspenseFallback from "./pages/suspense";
+import AppRoutes from "./routes";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Suspense fallback={<SuspenseFallback />}>
+      <AppRoutes />
+    </Suspense>
   );
 }
 

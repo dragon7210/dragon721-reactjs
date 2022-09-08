@@ -1,4 +1,4 @@
-const token =
+const LOGIN_TOKEN =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFua2l0a3I1ODU4QGdtYWlsLmNvbSIsImdpdGh1YiI6Imh0dHBzOi8vZ2l0aHViLmNvbS9BbmtpdGtyNTg1OD90YWI9cmVwb3NpdG9yaWVzIiwiaWF0IjoxNjYyNTQ4Mzk0LCJleHAiOjE2NjI5ODAzOTR9.OJX46z_BxgGP0jalUpbyBNf9XJ8iSJdQ_aWcfZiCfKQ";
 
-export default token;
+export default LOGIN_TOKEN;
