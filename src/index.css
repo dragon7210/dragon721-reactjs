@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
